@@ -184,6 +184,9 @@ export function pickModelForRole(models: LocalModel[], settings: AISettings, rol
 /** Gibt OpenAI-kompatible Settings für die Rolle zurück (starte ggf. Modell). */
 export async function effectiveSettings(settings: AISettings, role: ModelRole): Promise<AISettings> {
   if (settings.provider !== 'local') return settings;
+  if (!(window as any).studio) {
+    throw new Error('Der lokale KI-Provider (llama.cpp) ist nur in der NAXORA-Desktop-App verfügbar. Im Browser bitte einen anderen Provider konfigurieren: Einstellungen → KI-Provider → Ollama, OpenAI oder Eigener Endpoint.');
+  }
   // Wiederverwendung: läuft bereits ein OpenAI-kompatibler Server auf :8080
   // (z. B. manuell gestarteter llama-server oder Überrest eines früheren
   // Laufs), ihn nutzen statt einen zweiten zu starten — spart RAM und

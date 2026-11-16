@@ -212,6 +212,11 @@ export default function App() {
   return (
     <div className="app">
       <div className="app-bg"><BackgroundFX /></div>
+      {!(window as any).studio && (
+        <div className="web-mode-banner">
+          Web-Version: Lokale KI, Agent und Desktop-Dateien sind nicht verfügbar. Chats &amp; Einstellungen werden nur in diesem Browser gespeichert.
+        </div>
+      )}
       <TopBar
         chats={chats}
         settings={settings}
@@ -222,7 +227,7 @@ export default function App() {
         sidebarOpen={sidebarOpen}
         onToggleSidebar={toggleSidebar}
         onMaximizeToggle={async () => {
-          await (window as any).studio.win.maximize();
+          await (window as any).studio?.win?.maximize();
           setMaximized(m => !m);
         }}
       />

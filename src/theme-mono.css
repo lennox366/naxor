@@ -348,3 +348,19 @@ input[type=checkbox]:checked {
 .hljs-type, .hljs-class, .hljs-function { color: #f5f5f5; }
 
 @media (prefers-reduced-motion: reduce) { .app-bg::before, .st-run, .spin { animation: none; } }
+
+/* ---------- Web-Version: Hinweis-Banner ---------- */
+.web-mode-banner {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 9999;
+  padding: 6px 14px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: .02em;
+  color: #0a0a0a;
+  background: linear-gradient(90deg, #e5e5e5, #fafafa 50%, #e5e5e5);
+  border-bottom: 1px solid rgba(255,255,255,.35);
+  box-shadow: 0 2px 12px rgba(0,0,0,.5);
+}
+.web-mode-banner ~ .topbar, .web-mode-banner + * { margin-top: 0; }

@@ -3,6 +3,7 @@ import wasmUrl from 'sql.js/dist/sql-wasm.wasm?url';
 
 let db: Database | null = null;
 let dbPath = 'studio.db';
+const WEB_DB_KEY = 'naxora-web-db';
 let saveTimer: ReturnType<typeof setTimeout> | null = null;
 
 function b64ToBytes(b64: string): Uint8Array {
@@ -32,7 +33,13 @@ export async function initDB(): Promise<void> {
   try {
     const text = await (window as any).studio.fs.readFile(dbPath);
     saved = b64ToBytes(text.trim());
-  } catch { /* fresh db */ }
+  } catch {
+    // Browser-Fallback: lokale Persistenz über localStorage (Web-Version)
+    try {
+      const ls = localStorage.getItem(WEB_DB_KEY);
+      if (ls) saved = b64ToBytes(ls.trim());
+    } catch { /* fresh db */ }
+  }
 
   db = saved ? new SQL.Database(saved) : new SQL.Database();
   db.run(`
@@ -103,12 +110,18 @@ function scheduleSave() {
 }
 
 async function persist() {
-  if (!db || !(window as any).studio) return;
-  try {
-    await (window as any).studio.fs.writeFile(dbPath, bytesToB64(db.export()));
-  } catch (e) {
-    console.error('DB persist failed', e);
+  if (!db) return;
+  const b64 = bytesToB64(db.export());
+  const st = (window as any).studio;
+  if (st?.fs) {
+    try {
+      await st.fs.writeFile(dbPath, b64);
+    } catch (e) {
+      console.error('DB persist failed', e);
+    }
+    return;
   }
+  try { localStorage.setItem(WEB_DB_KEY, b64); } catch { /* Speicher voll */ }
 }
 
 export function query<T = any>(sql: string, params: any[] = []): T[] {

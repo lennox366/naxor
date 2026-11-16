@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Dashboard: Projekt + Coding-Modus gewählt",
+    "ok": true
+  },
+  {
+    "name": "Test A: Senden",
+    "ok": true
+  },
+  {
+    "name": "Test A: Agent abgeschlossen (kein Timeout)",
+    "ok": true
+  },
+  {
+    "name": "Test A: test-agent.txt existiert mit Inhalt",
+    "ok": true
+  },
+  {
+    "name": "Test A: Antwort erwähnt Ergebnis",
+    "ok": true
+  },
+  {
+    "name": "Test B: Senden",
+    "ok": true
+  },
+  {
+    "name": "Test B: Agent abgeschlossen",
+    "ok": true
+  },
+  {
+    "name": "Test B: Inhalt geändert",
+    "ok": false
+  },
+  {
+    "name": "Test C: Senden",
+    "ok": true
+  },
+  {
+    "name": "Test C: Agent abgeschlossen",
+    "ok": true
+  },
+  {
+    "name": "Test C: Antwort nennt auth.js",
+    "ok": false
+  },
+  {
+    "name": "Test D: Senden",
+    "ok": true
+  },
+  {
+    "name": "Test D: Agent abgeschlossen",
+    "ok": true
+  },
+  {
+    "name": "Test D: feedbackChannelId geändert",
+    "ok": false
+  },
+  {
+    "name": "Test D: andere Einstellungen unverändert",
+    "ok": true
+  }
+]

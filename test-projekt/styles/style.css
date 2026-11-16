@@ -1,0 +1,34 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header, footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.karten-grid {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+.karte {
+  background-color: #f0f0f0;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.karte:hover {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .karten-grid {
+    grid-template-columns: 100%;
+  }
+}

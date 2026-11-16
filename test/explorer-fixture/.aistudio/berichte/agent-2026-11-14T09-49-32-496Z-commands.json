@@ -1,0 +1,29 @@
+{
+  "auftragId": "amwg7zpm9",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\explorer-fixture",
+  "createdAt": "2026-11-14T09:49:32.499Z",
+  "commands": [
+    {
+      "id": "amwg7zpm9-c1",
+      "auftragId": "amwg7zpm9",
+      "command": "node -e \"JSON.parse(require('fs').readFileSync('config/settings.json','utf8'))\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794649625490
+    },
+    {
+      "id": "amwg7zpm9-c2",
+      "auftragId": "amwg7zpm9",
+      "command": "node -e \"JSON.parse(require('fs').readFileSync('config/settings.json','utf8'))\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794649711507
+    }
+  ]
+}

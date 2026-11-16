@@ -1,0 +1,18 @@
+{
+  "auftragId": "amwfasrjo",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test-projekt",
+  "createdAt": "2026-11-13T18:16:29.040Z",
+  "commands": [
+    {
+      "id": "amwfasrjo-c1",
+      "auftragId": "amwfasrjo",
+      "command": "node math.js",
+      "code": 0,
+      "expect": "99",
+      "expectMet": false,
+      "stdout": "42\n81\n",
+      "stderr": "",
+      "ts": 1794593781585
+    }
+  ]
+}

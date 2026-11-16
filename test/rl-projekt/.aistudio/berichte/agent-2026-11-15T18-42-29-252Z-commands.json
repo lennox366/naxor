@@ -1,0 +1,17 @@
+{
+  "auftragId": "amwi6m68u",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\rl-projekt",
+  "createdAt": "2026-11-15T18:42:29.254Z",
+  "commands": [
+    {
+      "id": "amwi6m68u-auto1",
+      "auftragId": "amwi6m68u",
+      "command": "node --check \"src/test.js\"",
+      "code": 0,
+      "auto": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794768149252
+    }
+  ]
+}

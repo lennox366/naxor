@@ -1,0 +1,33 @@
+{
+  "auftragId": "amwgah0y5",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\explorer-fixture",
+  "createdAt": "2026-11-14T10:55:40.881Z",
+  "commands": [
+    {
+      "id": "amwgah0y5-c1",
+      "auftragId": "amwgah0y5",
+      "command": "your_command",
+      "code": 1,
+      "killed": false,
+      "timedOut": false,
+      "expect": "expected_output",
+      "expectMet": false,
+      "stdout": "",
+      "stderr": "your_command : Die Benennung \"your_command\" wurde nicht als Name eines Cmdlet, einer Funktion, einer Skriptdatei oder \r\neines ausf�hrbaren Programms erkannt. �berpr�fen Sie die Schreibweise des Namens, oder ob der Pfad korrekt ist (sofern \r\nenthalten), und wiederholen Sie den Vorgang.\r\nIn Zeile:1 Zeichen:1\r\n+ your_command\r\n+ ~~~~~~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (your_command:String) [], CommandNotFoundException\r\n    + FullyQualifiedErrorId : CommandNotFoundException\r\n \r\n",
+      "ts": 1794653721807
+    },
+    {
+      "id": "amwgah0y5-c2",
+      "auftragId": "amwgah0y5",
+      "command": "your_command",
+      "code": 1,
+      "killed": false,
+      "timedOut": false,
+      "expect": "expected_output",
+      "expectMet": false,
+      "stdout": "",
+      "stderr": "your_command : Die Benennung \"your_command\" wurde nicht als Name eines Cmdlet, einer Funktion, einer Skriptdatei oder \r\neines ausf�hrbaren Programms erkannt. �berpr�fen Sie die Schreibweise des Namens, oder ob der Pfad korrekt ist (sofern \r\nenthalten), und wiederholen Sie den Vorgang.\r\nIn Zeile:1 Zeichen:1\r\n+ your_command\r\n+ ~~~~~~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (your_command:String) [], CommandNotFoundException\r\n    + FullyQualifiedErrorId : CommandNotFoundException\r\n \r\n",
+      "ts": 1794653740871
+    }
+  ]
+}

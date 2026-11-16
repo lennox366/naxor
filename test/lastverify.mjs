@@ -1,0 +1,10 @@
+import fs from 'fs';
+import init from 'sql.js';
+const b64 = fs.readFileSync(process.env.APPDATA + '/ai-developer-studio/studio.db', 'utf8').trim();
+const SQL = await init();
+const db = new SQL.Database(Buffer.from(b64, 'base64'));
+const id = db.exec("SELECT id FROM agent_tasks ORDER BY created_at DESC LIMIT 1")[0].values[0][0];
+const rt = db.exec(`SELECT payload FROM agent_events WHERE task_id='${id}' AND kind='tool' AND payload LIKE '%run_test%' AND payload LIKE '%result%'`)[0];
+(rt ? rt.values : []).forEach(v => console.log(v[0].slice(0, 900), '\n---'));
+const vf = db.exec(`SELECT payload FROM agent_events WHERE task_id='${id}' AND kind='verify'`)[0];
+console.log(vf ? vf.values[0][0].slice(-800) : 'no verify');

@@ -1,0 +1,11 @@
+import fs from 'fs';
+import init from 'sql.js';
+const p = process.env.APPDATA + '/ai-developer-studio/studio.db';
+const b64 = fs.readFileSync(p, 'utf8').trim();
+const SQL = await init();
+const db = new SQL.Database(Buffer.from(b64, 'base64'));
+const t = db.exec("SELECT id,status,substr(result,1,200) r FROM agent_tasks ORDER BY created_at DESC LIMIT 1")[0];
+console.log('TASK', JSON.stringify(t.values));
+const id = t.values[0][0];
+const ev = db.exec(`SELECT kind,substr(payload,1,110) FROM agent_events WHERE task_id='${id}' ORDER BY ts`);
+(ev[0] ? ev[0].values : []).forEach(v => console.log(v[0], '|', v[1]));

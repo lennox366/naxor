@@ -1,0 +1,17 @@
+{
+  "auftragId": "amwf9qmnv",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test-projekt",
+  "createdAt": "2026-11-13T17:49:06.212Z",
+  "commands": [
+    {
+      "id": "amwf9qmnv-auto1",
+      "auftragId": "amwf9qmnv",
+      "command": "npx tsc --noEmit --skipLibCheck --module esnext --target es2020 \"src/rechner.ts\"",
+      "code": 0,
+      "auto": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794592146208
+    }
+  ]
+}

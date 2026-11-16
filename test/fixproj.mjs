@@ -1,0 +1,11 @@
+import initSqlJs from 'sql.js';
+import fs from 'node:fs';
+const raw = fs.readFileSync(process.env.APPDATA + '/ai-developer-studio/studio.db', 'utf8');
+const SQL = await initSqlJs();
+const db = new SQL.Database(new Uint8Array(Buffer.from(raw.trim(), 'base64')));
+const arr = JSON.parse(db.exec("SELECT value FROM settings WHERE key='projects'")[0].values[0][0]);
+const clean = arr.filter(p => !p.name.includes('BOT-TESTKOPIE') && p.path.includes('Desktop'));
+clean.push({ name: 'BOT-TESTKOPIE', path: 'C:/Users/User/Desktop/tasten/Code KI alles/test/bot-copy' });
+db.run("UPDATE settings SET value=? WHERE key='projects'", [JSON.stringify(clean)]);
+fs.writeFileSync(process.env.APPDATA + '/ai-developer-studio/studio.db', Buffer.from(db.export()).toString('base64'));
+console.log(clean.map((p, i) => i + ': ' + p.name + ' | ' + p.path).join('\n'));

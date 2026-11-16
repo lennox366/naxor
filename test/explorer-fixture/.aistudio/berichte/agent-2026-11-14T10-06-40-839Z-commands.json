@@ -1,0 +1,19 @@
+{
+  "auftragId": "amwg8pcqq",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\explorer-fixture",
+  "createdAt": "2026-11-14T10:06:41.308Z",
+  "commands": [
+    {
+      "id": "amwg8pcqq-auto1",
+      "auftragId": "amwg8pcqq",
+      "command": "node -e \"JSON.parse(require('fs').readFileSync('config/settings.json','utf8'))\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "auto": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794650800837
+    }
+  ]
+}

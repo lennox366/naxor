@@ -1,0 +1,11 @@
+﻿import initSqlJs from 'sql.js';
+import fs from 'node:fs';
+const raw = fs.readFileSync(process.env.APPDATA + '/ai-developer-studio/studio.db', 'utf8');
+const SQL = await initSqlJs();
+const db = new SQL.Database(new Uint8Array(Buffer.from(raw.trim(), 'base64')));
+const arr = JSON.parse(db.exec("SELECT value FROM settings WHERE key='projects'")[0].values[0][0]);
+const p = 'C:/Users/User/Desktop/tasten/Code KI alles/test/dev-task';
+if (!arr.find(x => x.path === p)) { arr.push({ name: 'dev-task', path: p });
+  db.run("UPDATE settings SET value=? WHERE key='projects'", [JSON.stringify(arr)]);
+  fs.writeFileSync(process.env.APPDATA + '/ai-developer-studio/studio.db', Buffer.from(db.export()).toString('base64'));
+  console.log('registriert'); } else console.log('schon da');

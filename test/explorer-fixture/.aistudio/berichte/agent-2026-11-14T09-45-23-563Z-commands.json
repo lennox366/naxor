@@ -1,0 +1,45 @@
+{
+  "auftragId": "amwg7wcmz",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\explorer-fixture",
+  "createdAt": "2026-11-14T09:45:23.582Z",
+  "commands": [
+    {
+      "id": "amwg7wcmz-c1",
+      "auftragId": "amwg7wcmz",
+      "command": "cat config/settings.json | grep feedbackChannelId",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "expect": "feedbackChannelId: \"1569408831300042793\",",
+      "expectMet": false,
+      "stdout": "  \"feedbackChannelId\": \"1000000000000000001\",\n",
+      "stderr": "",
+      "ts": 1794649452304
+    },
+    {
+      "id": "amwg7wcmz-c2",
+      "auftragId": "amwg7wcmz",
+      "command": "cat config/settings.json | grep feedbackChannelId",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "expect": "feedbackChannelId: \"1569408831300042793\",",
+      "expectMet": false,
+      "stdout": "  \"feedbackChannelId\": \"1000000000000000001\",\n",
+      "stderr": "",
+      "ts": 1794649500263
+    },
+    {
+      "id": "amwg7wcmz-auto3",
+      "auftragId": "amwg7wcmz",
+      "command": "node -e \"JSON.parse(require('fs').readFileSync('config/settings.json','utf8'))\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "auto": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794649523561
+    }
+  ]
+}

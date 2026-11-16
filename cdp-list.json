@@ -1,0 +1,9 @@
+[ {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@e9338f3ca35356d29b834450ba248c96511395e0/inspector.html?ws=127.0.0.1:9333/devtools/page/3D1146DD251F6D8721C18CDAC63EA975",
+   "id": "3D1146DD251F6D8721C18CDAC63EA975",
+   "title": "AI Developer Studio",
+   "type": "page",
+   "url": "file:///C:/Users/User/Desktop/tasten/Code%20KI%20alles/dist/index.html",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:9333/devtools/page/3D1146DD251F6D8721C18CDAC63EA975"
+} ]

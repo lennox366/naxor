@@ -1,0 +1,44 @@
+{
+  "auftragId": "amwi6cv90",
+  "projectRoot": "C:/Users/User/Desktop/tasten/Code KI alles/test/dev-task",
+  "createdAt": "2026-11-15T18:40:18.348Z",
+  "commands": [
+    {
+      "id": "amwi6cv90-c1",
+      "auftragId": "amwi6cv90",
+      "command": "node src/main.js",
+      "code": 1,
+      "killed": false,
+      "timedOut": false,
+      "expect": "dividiere(10,2)=5",
+      "expectMet": false,
+      "stdout": "addiere(2,3)= 5\nsubtrahiere(5,3)= 2\n",
+      "stderr": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\dev-task\\src\\main.js:4\r\nconsole.log('dividiere(10,2)=', dividiere(10,2));\r\n        ^\r\n\r\nReferenceError: dividiere is not defined\r\n    at Object.<anonymous> (C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\dev-task\\src\\main.js:4:9)\r\n    at Module._compile (node:internal/modules/cjs/loader:1968:14)\r\n    at Object..js (node:internal/modules/cjs/loader:2108:10)\r\n    at Module.load (node:internal/modules/cjs/loader:1690:32)\r\n    at Module._load (node:internal/modules/cjs/loader:1480:12)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\r\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:33:47\r\n\r\nNode.js v26.13.0\r\n",
+      "ts": 1794767903527
+    },
+    {
+      "id": "amwi6cv90-auto2",
+      "auftragId": "amwi6cv90",
+      "command": "node --check \"src/rechner.js\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "auto": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794768017357
+    },
+    {
+      "id": "amwi6cv90-auto3",
+      "auftragId": "amwi6cv90",
+      "command": "node --check \"src/main.js\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "auto": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794768018242
+    }
+  ]
+}

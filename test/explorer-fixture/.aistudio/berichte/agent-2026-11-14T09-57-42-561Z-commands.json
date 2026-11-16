@@ -1,0 +1,31 @@
+{
+  "auftragId": "amwg894rp",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\explorer-fixture",
+  "createdAt": "2026-11-14T09:57:42.585Z",
+  "commands": [
+    {
+      "id": "amwg894rp-c1",
+      "auftragId": "amwg894rp",
+      "command": "tsc --noEmit",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "expect": "",
+      "expectMet": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794650057571
+    },
+    {
+      "id": "amwg894rp-c2",
+      "auftragId": "amwg894rp",
+      "command": "node --check",
+      "code": -1,
+      "killed": false,
+      "timedOut": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794650237603
+    }
+  ]
+}

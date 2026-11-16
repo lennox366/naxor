@@ -1,0 +1,20 @@
+{
+  "auftragId": "amwgakrew",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\explorer-fixture",
+  "createdAt": "2026-11-14T11:00:06.695Z",
+  "commands": [
+    {
+      "id": "amwgakrew-c1",
+      "auftragId": "amwgakrew",
+      "command": "your_test_command",
+      "code": 1,
+      "killed": false,
+      "timedOut": false,
+      "expect": "your_expected_output",
+      "expectMet": false,
+      "stdout": "",
+      "stderr": "your_test_command : Die Benennung \"your_test_command\" wurde nicht als Name eines Cmdlet, einer Funktion, einer \r\nSkriptdatei oder eines ausf�hrbaren Programms erkannt. �berpr�fen Sie die Schreibweise des Namens, oder ob der Pfad \r\nkorrekt ist (sofern enthalten), und wiederholen Sie den Vorgang.\r\nIn Zeile:1 Zeichen:1\r\n+ your_test_command\r\n+ ~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (your_test_command:String) [], CommandNotFoundException\r\n    + FullyQualifiedErrorId : CommandNotFoundException\r\n \r\n",
+      "ts": 1794653992241
+    }
+  ]
+}

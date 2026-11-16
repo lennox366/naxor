@@ -1,0 +1,35 @@
+{
+  "auftragId": "amwf9un91",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test-projekt",
+  "createdAt": "2026-11-13T17:58:21.600Z",
+  "commands": [
+    {
+      "id": "amwf9un91-c1",
+      "auftragId": "amwf9un91",
+      "command": "python kaputt.py",
+      "code": 0,
+      "stdout": "10\r\n",
+      "stderr": "",
+      "ts": 1794592201112
+    },
+    {
+      "id": "amwf9un91-c2",
+      "auftragId": "amwf9un91",
+      "command": "python kaputt.py' ist jetzt 1, was korrekt ist.",
+      "code": 1,
+      "stdout": "",
+      "stderr": "Die Zeichenfolge hat kein Abschlusszeichen: '.\r\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString\r\n \r\n",
+      "ts": 1794592210410
+    },
+    {
+      "id": "amwf9un91-auto3",
+      "auftragId": "amwf9un91",
+      "command": "python -m py_compile \"kaputt.py\"",
+      "code": 0,
+      "auto": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794592701577
+    }
+  ]
+}

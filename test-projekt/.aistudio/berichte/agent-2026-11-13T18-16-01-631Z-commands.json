@@ -1,0 +1,29 @@
+{
+  "auftragId": "amwfar782",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test-projekt",
+  "createdAt": "2026-11-13T18:16:01.641Z",
+  "commands": [
+    {
+      "id": "amwfar782-c1",
+      "auftragId": "amwfar782",
+      "command": "node math.js",
+      "code": 0,
+      "expect": "42",
+      "expectMet": true,
+      "stdout": "42\n81\n",
+      "stderr": "",
+      "ts": 1794593752714
+    },
+    {
+      "id": "amwfar782-c2",
+      "auftragId": "amwfar782",
+      "command": "node math.js",
+      "code": 0,
+      "expect": "81",
+      "expectMet": true,
+      "stdout": "42\n81\n",
+      "stderr": "",
+      "ts": 1794593753812
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "auftragId": "amwfatbrc",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test-projekt",
+  "createdAt": "2026-11-13T18:17:25.956Z",
+  "commands": [
+    {
+      "id": "amwfatbrc-c1",
+      "auftragId": "amwfatbrc",
+      "command": "python kaputt.py\", \"expect\": \"0\"}</arguments>",
+      "code": 1,
+      "stdout": "",
+      "stderr": "Die Zeichenfolge hat kein Abschlusszeichen: \".\r\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString\r\n \r\n",
+      "ts": 1794593817697
+    },
+    {
+      "id": "amwfatbrc-c2",
+      "auftragId": "amwfatbrc",
+      "command": "python kaputt.py\", \"expect\": \"0\"}</arguments>",
+      "code": 1,
+      "stdout": "",
+      "stderr": "Die Zeichenfolge hat kein Abschlusszeichen: \".\r\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString\r\n \r\n",
+      "ts": 1794593832239
+    }
+  ]
+}

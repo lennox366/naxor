@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Environment & secrets — niemals committen
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Lokale Daten & Backups
+*.db
+*.sqlite
+*.sqlite3
+backups/
+.backups/
+pre-*/
+*.log
+
+# KI-Modelle (lokal, nicht für GitHub/Vercel)
+models/
+*.gguf
+*.bin
+*.onnx
+
+# Getrennte Projekte / Test-Kopien mit eigenen Secrets
+test/bot-copy/
+
+# OS / Editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Vite
+.vite/

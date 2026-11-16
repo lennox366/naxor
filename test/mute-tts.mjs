@@ -1,0 +1,12 @@
+import fs from 'fs';
+import init from 'sql.js';
+const p = process.env.APPDATA + '/ai-developer-studio/studio.db';
+const b64 = fs.readFileSync(p, 'utf8').trim();
+const SQL = await init();
+const db = new SQL.Database(Buffer.from(b64, 'base64'));
+const set = (k, v) => db.run('INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)', [k, JSON.stringify(v)]);
+set('autoSpeak', false);
+set('continuousVoice', false);
+set('voiceMode', false);
+fs.writeFileSync(p, Buffer.from(db.export()).toString('base64'));
+console.log('autoSpeak/continuousVoice/voiceMode = false gespeichert');

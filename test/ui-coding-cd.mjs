@@ -1,0 +1,52 @@
+// Nachtest C (Suche) + D (Config-Änderung) nach FEHLER-Case-Fix
+import path from 'node:path';
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const FIXTURE = path.resolve('test/explorer-fixture');
+const LIST = await (await fetch('http://127.0.0.1:9333/json/list')).json();
+const page = LIST.find(t => t.type === 'page');
+const ws = new WebSocket(page.webSocketDebuggerUrl);
+await new Promise(r => ws.onopen = r);
+let id = 0; const pending = new Map();
+ws.onmessage = (e) => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id); } };
+const send = (method, params = {}) => new Promise((res, rej) => { const i = ++id; pending.set(i, res); ws.send(JSON.stringify({ id: i, method, params })); setTimeout(() => rej(new Error('timeout')), 60000); });
+await send('Page.enable'); await send('Runtime.enable');
+const ev = async (expr) => { const r = await send('Runtime.evaluate', { expression: expr, returnByValue: true, awaitPromise: true }); if (r.result?.exceptionDetails) return { __err: r.result.exceptionDetails.exception?.description }; return r.result?.result?.value; };
+
+await ev(`[...document.querySelectorAll('.nav-item')].find(b => b.innerText.includes('Neuer Chat'))?.click()`);
+await sleep(1000);
+const setup = await ev(`(() => {
+  const proj = document.querySelector('.project-select');
+  const mode = document.querySelector('.mode-select');
+  if (!proj || !mode) return 'MISSING';
+  const opt = [...proj.options].find(o => o.value.includes('explorer-fixture'));
+  proj.value = opt.value; proj.dispatchEvent(new Event('change', { bubbles: true }));
+  mode.value = 'code'; mode.dispatchEvent(new Event('change', { bubbles: true }));
+  return 'OK';
+})()`);
+console.log('setup:', setup);
+const setComposer = (t) => ev(`(() => { const ta = document.querySelector('.composer textarea'); const s = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value').set; s.call(ta, ${JSON.stringify(t)}); ta.dispatchEvent(new Event('input', { bubbles: true })); return 'ok'; })()`);
+const clickSend = () => ev(`(() => { const b = document.querySelector('.send-btn'); if (b && !b.disabled) { b.click(); return 'clicked'; } return 'disabled'; })()`);
+const thinking = () => ev(`!!document.querySelector('.chat-wrap .typing') || [...document.querySelectorAll('button')].some(b => b.innerText.includes('Stopp'))`);
+const waitIdle = async (timeout = 300000) => { const t0 = Date.now(); await sleep(3000); while (Date.now() - t0 < timeout) { if (!(await thinking())) return true; await sleep(4000); } return false; };
+const fileContent = async (rel) => ev(`(async () => { try { return await window.studio.fs.readFile(${JSON.stringify(FIXTURE.replace(/\\/g, '\\\\'))} + '\\\\' + ${JSON.stringify(rel)}, 100000); } catch(e) { return 'ERR:' + e.message; } })()`);
+const lastAssistant = () => ev(`(() => { const m = [...document.querySelectorAll('.msg.assistant .bubble')]; return m.length ? m[m.length-1].innerText : ''; })()`);
+
+console.log('\n--- Test C: Suche login ---');
+await setComposer('Suche in meinem Projekt die Funktion login und sage mir, in welcher Datei sie liegt.');
+console.log('send:', await clickSend());
+console.log('idle:', await waitIdle());
+await sleep(1500);
+const cReply = await lastAssistant();
+console.log('reply:', (cReply || '').slice(0, 1200));
+console.log('C_PASS:', /auth\.js/i.test(cReply || ''));
+
+console.log('\n--- Test D: feedbackChannelId ---');
+await setComposer('Suche die Einstellung feedbackChannelId in meiner Konfiguration und ändere sie auf 1569408831300042793.');
+console.log('send:', await clickSend());
+console.log('idle:', await waitIdle());
+await sleep(1500);
+const dContent = await fileContent('config/settings.json');
+console.log('settings.json:', dContent);
+console.log('D_PASS:', typeof dContent === 'string' && dContent.includes('1569408831300042793'));
+console.log('reply:', (await lastAssistant())?.slice(0, 1200));
+process.exit(0);

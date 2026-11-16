@@ -1,0 +1,19 @@
+{
+  "auftragId": "amwi4zwwr",
+  "projectRoot": "C:/Users/User/Desktop/tasten/Code KI alles/test/dev-task",
+  "createdAt": "2026-11-15T17:59:53.452Z",
+  "commands": [
+    {
+      "id": "amwi4zwwr-auto1",
+      "auftragId": "amwi4zwwr",
+      "command": "node --check \"src/main.js\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "auto": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794765593434
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "auftragId": "amwi3kh1z",
+  "projectRoot": "C:/Users/User/Desktop/tasten/Code KI alles/test/dev-task",
+  "createdAt": "2026-11-15T17:20:27.387Z",
+  "commands": [
+    {
+      "id": "amwi3kh1z-c1",
+      "auftragId": "amwi3kh1z",
+      "command": "node src/main.js",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "expect": "dividiere(10,2)= 5",
+      "expectMet": false,
+      "stdout": "addiere(2,3)= 5\nsubtrahiere(5,3)= 8\nmultipliziere(4,3)= 12\n",
+      "stderr": "",
+      "ts": 1794763142622
+    }
+  ]
+}

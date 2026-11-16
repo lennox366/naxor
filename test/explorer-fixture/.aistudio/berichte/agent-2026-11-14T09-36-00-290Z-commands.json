@@ -1,0 +1,43 @@
+{
+  "auftragId": "amwg7kmkq",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\explorer-fixture",
+  "createdAt": "2026-11-14T09:36:00.292Z",
+  "commands": [
+    {
+      "id": "amwg7kmkq-c1",
+      "auftragId": "amwg7kmkq",
+      "command": "tsc --noEmit",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794648916972
+    },
+    {
+      "id": "amwg7kmkq-c2",
+      "auftragId": "amwg7kmkq",
+      "command": "node app.js",
+      "code": 1,
+      "killed": false,
+      "timedOut": false,
+      "expect": "1569408831300042793",
+      "expectMet": false,
+      "stdout": "",
+      "stderr": "node:internal/modules/cjs/loader:1607\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test\\explorer-fixture\\app.js'\r\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1603:15)\r\n    at wrapResolveFilename (node:internal/modules/cjs/loader:1145:27)\r\n    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1169:10)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1196:12)\r\n    at Module._load (node:internal/modules/cjs/loader:1370:5)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\r\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:33:47 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v26.13.0\r\n",
+      "ts": 1794648917916
+    },
+    {
+      "id": "amwg7kmkq-auto3",
+      "auftragId": "amwg7kmkq",
+      "command": "node -e \"JSON.parse(require('fs').readFileSync('config/settings.json','utf8'))\"",
+      "code": 1,
+      "killed": false,
+      "timedOut": false,
+      "auto": true,
+      "stdout": "",
+      "stderr": "<anonymous_script>:1\r\nfeedbackChannelId: \"1569408831300042793\"\r\n ^\r\n\r\nSyntaxError: Unexpected token 'e', \"feedbackCha\"... is not valid JSON\r\n    at JSON.parse (<anonymous>)\r\n    at [eval]:1:6\r\n    at runScriptInThisContext (node:internal/vm:219:10)\r\n    at node:internal/process/execution:485:12\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:483:60)\r\n    at evalFunction (node:internal/process/execution:317:30)\r\n    at evalTypeScript (node:internal/process/execution:329:3)\r\n    at node:internal/main/eval_string:71:3\r\n\r\nNode.js v26.13.0\r\n",
+      "ts": 1794648960288
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "auftragId": "amwi5p8iy",
+  "projectRoot": "C:/Users/User/Desktop/tasten/Code KI alles/test/dev-task",
+  "createdAt": "2026-11-15T18:19:57.943Z",
+  "commands": [
+    {
+      "id": "amwi5p8iy-auto1",
+      "auftragId": "amwi5p8iy",
+      "command": "node --check \"src/rechner.js\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "auto": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794766797055
+    },
+    {
+      "id": "amwi5p8iy-auto2",
+      "auftragId": "amwi5p8iy",
+      "command": "node --check \"src/main.js\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "auto": true,
+      "stdout": "",
+      "stderr": "",
+      "ts": 1794766797917
+    }
+  ]
+}

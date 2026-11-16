@@ -1,0 +1,12 @@
+import initSqlJs from 'sql.js';
+import fs from 'node:fs';
+const raw = fs.readFileSync(process.env.APPDATA + '/ai-developer-studio/studio.db', 'utf8');
+const SQL = await initSqlJs();
+const db = new SQL.Database(new Uint8Array(Buffer.from(raw.trim(), 'base64')));
+const t = db.exec("SELECT id,status,created_at,updated_at,substr(result,1,300) FROM agent_tasks WHERE project_root LIKE '%dev-task%' ORDER BY created_at DESC LIMIT 1")[0].values[0];
+console.log('id:', t[0], '| status:', t[1], '| created:', new Date(t[2]).toLocaleTimeString(), '| updated:', new Date(t[3]).toLocaleTimeString());
+console.log('result:', t[4]);
+const m = db.exec("SELECT substr(content,1,400) FROM messages WHERE role='assistant' ORDER BY created_at DESC LIMIT 1")[0];
+console.log('letzte msg:', m?.values[0]?.[0]);
+const evc = db.exec("SELECT COUNT(*) FROM agent_events WHERE task_id=?", [t[0]])[0].values[0][0];
+console.log('events:', evc);

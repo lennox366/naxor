@@ -1,0 +1,33 @@
+{
+  "auftragId": "amwfc37x7",
+  "projectRoot": "C:\\Users\\User\\Desktop\\tasten\\Code KI alles\\test-projekt",
+  "createdAt": "2026-11-13T18:53:36.925Z",
+  "commands": [
+    {
+      "id": "amwfc37x7-c1",
+      "auftragId": "amwfc37x7",
+      "command": "python -c \"print(40+2)\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "expect": "42",
+      "expectMet": true,
+      "stdout": "42\r\n",
+      "stderr": "",
+      "ts": 1794595989778
+    },
+    {
+      "id": "amwfc37x7-c2",
+      "auftragId": "amwfc37x7",
+      "command": "python -c \"print(40+2)\"",
+      "code": 0,
+      "killed": false,
+      "timedOut": false,
+      "expect": "42",
+      "expectMet": true,
+      "stdout": "42\r\n",
+      "stderr": "",
+      "ts": 1794596011514
+    }
+  ]
+}
